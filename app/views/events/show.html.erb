@@ -1,0 +1,146 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Meet<b>Geek</b></a>
+    </div>
+    <div class="collapse navbar-collapse">
+     
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="search for event">
+        </div>
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About</a></li>
+       <li><a href="#">Contact</a></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="header">
+  <div class="text-vertical-center">
+    <h2>
+      <%= @event.name %>
+    </h2>
+    <br><br><br>
+  </div>
+</header>
+
+<section class="col-lg-8 col-lg-offset-2">
+  <div class="top-card">
+    <div class="register-botton">
+      <h4><b>
+      REGISTER
+      </b></h4>
+    </div>
+    <div class="see-website">
+      <h4><b>
+      see event website
+      </b></h4>
+    </div>
+    <div class="price-info">
+      <h4><b>
+      FREE
+      </b></h4>
+    </div>
+  </div>
+  <div class="down-card">
+    <div class="info-card">    
+      <h4><b><%= image_tag("calendar.png", :alt => "calendar", :width => "30px", :height => "30px") %> &nbsp
+      <%= @event.start_date%> &nbsp &nbsp
+      <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+      <span class="glyphicon-class"> <%= @event.adr %> </span> &nbsp &nbsp 
+      <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+      <span class="glyphicon-class"><%= @event.time %></span><br></b></h4>&nbsp &nbsp
+    </div>
+    <div class="description">
+      <p>
+      <%= truncate( @event.desc, length:500, separator: ' ') %>
+      </p>
+    </div>
+    <div style="border-top:2px solid grey; margin: 35px 20px;padding: 20px 0;">
+
+    </div>
+  </div>
+
+  <div class="map">
+    <div id="map" style='width: 800px; height: 400px;'>
+
+    <script type="text/javascript">
+      handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": "<%= @event.latitude %>",
+      "lng": "<%= @event.longitude %>",
+      "picture": {
+        "url": "http://maps.gstatic.com/mapfiles/markers2/marker.png",
+        "width":  32,
+        "height": 32
+      },
+      "infowindow": "<%= @event.adr %>"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(12);
+});
+
+</script>
+    </div>
+  </div>
+
+<h3>You may also like</h3>
+<ul>
+<% for event in @event.nearbys(1) %>
+  <div class="col-xs-12 col-sm-6 col-md-4 block-center">
+        <div class="clear">
+        </div>
+        <div class="block">
+          <div class="top-block">
+            <div class="price">
+              <div class="text-vertical-center"> 
+  
+                <% if (event.price == "0.00")%>
+                    FREE
+                  <% elsif (event.price == "") %>
+                    FREE
+                  <% elsif (event.price == "0.00 EUR") %>
+                    FREE
+                  <% elsif (event.price == "0.00 GBP") %>
+                    FREE
+                  <% else %>
+                     <%= event.price %> 
+                <% end %>
+
+              </div>
+            </div>
+            <div class="title">
+                <h3><b>
+                  <%= truncate(event.name, length: 45, separator: ' ')%>
+                </b></h3>
+            </div>
+          </div>
+          <div class="down-block">
+            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+            <span class="glyphicon-class">Event start at: <%= event.time %></span><br>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            <span class="glyphicon-class"> <%= truncate( event.adr, length:17, separator: ' ') %> </span>
+          </div>
+        </div>
+      </div>
+<% end %>
+</ul>
+
+</section>
+
+<
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+
+<!-- .to_datetime.strftime("%d.%m.%Y" -->

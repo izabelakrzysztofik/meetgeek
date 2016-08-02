@@ -1,0 +1,289 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: "Lato",Helvetica,Arial,sans-serif-light;
+}
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 7.5em;
+    text-shadow: 2px 0px 7px rgba(0, 21, 100, 0.75);
+}
+.text-vertical-center h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 600;
+}
+.text-vertical-center h3{
+    font-size: 35px;
+}
+h2:first-child {
+    color: white;
+}
+div h2 img{
+    margin-right: 10px;
+}
+
+/* Header */
+
+.header {
+    color: white;
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background: url('desktop.jpg') no-repeat top center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Clear */
+
+.about {
+    background: #000;
+}
+.clear {
+    margin-left: 50px;
+}
+.block {
+    height: 250px;
+    width: 285px;
+    display: inline-block;
+    margin: 10px 0 30px 0;
+}
+.block:hover {
+  margin: 0px 0 15px 0;    
+  transition: margin-bottom .30s;
+  -moz-transition: margin-bottom .30s; /* Firefox 4 */
+  -webkit-transition: margin-bottom .30s; /* Safari and Chrome */
+  -o-transition: margin-bottom .30s; /* Opera */
+}
+
+.top-block{
+    background: url('event.jpg') center right;
+    width: 100%; 
+    height:164px; 
+    background-size: cover;
+    position: relative;
+    padding: 65px 20px 20px 20px;
+} 
+.price{
+    width: 70px;
+    height: 75px;
+    background: #ff0060;
+    position: absolute;
+    right: 15px;
+    top: -5px;
+    color:white;
+    font-size:20px;
+    font-weight: 700;
+    display: table;
+}
+.title {
+    color:white;
+    font-weight: bold;
+}
+.title > h3 {
+    font-size: 20px;
+}
+
+.name {
+    font-size: 15px;
+    color:white;
+    font-weight: 700;
+}
+
+.down-block{
+    padding: 10px 15px;
+    font-size: 20px;
+    -webkit-box-shadow: 3px 6px 9px 0px rgba(212,212,212,1);
+    -moz-box-shadow: 3px 6px 9px 0px rgba(212,212,212,1);
+    box-shadow: 3px 6px 9px 0px rgba(212,212,212,1);
+}
+table {
+    background-color: black;
+}
+
+/* Icons */
+
+div.date > div {
+    color: #000;
+}
+.black-content {
+    background: black;
+    display: table;
+    width: 100%;
+    height:130px;
+    position: absolute;
+}
+.date-text h2 {
+    color: #000;
+}
+
+/* Filter Panel */
+
+.filter-panel {
+    background:white;
+    height:175px;
+    margin-top:-85px;
+}
+
+/* Nav */ 
+
+.container-fluid {
+    background: white;
+    border-color:white;
+}
+.navbar-default {
+    margin: 0px;
+    padding: 10px 10px 10px 10px;
+    background: white;
+    border-color:white;
+}
+.navbar-default .navbar-brand {
+    color: black;
+    font-size: 25px;
+    font-weight: 200px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+
+}
+.down-card {
+    -webkit-box-shadow: 0px 6px 28px -6px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 6px 28px -6px rgba(0,0,0,0.36);
+    box-shadow: 0px 6px 28px -6px rgba(0,0,0,0.36); 
+}
+.top-card {
+    padding: 10px 0px;
+    background: #eeeeee;
+    height:100px;
+    margin-top:-85px;
+    position: relative;
+}
+.info-card {
+    padding: 35px 10px 0px 50px;
+    background: white;
+}
+
+.register-botton {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 20px 5px 20px;
+    margin: 20px 10px 10px 45px;
+    background: #ff0060;
+    color: white;
+    position: absolute;
+}
+.see-website {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 10px 10px 10px;
+    margin: 20px 10px 10px 45px;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -186px;
+    margin-top: -75px;
+}
+.price-info {
+    background: #ff0060;
+    padding: 28px 8px;
+    float: right;
+    margin-top: -20px;
+    margin-right: 50px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+}
+.price-info h4 {
+    font-size: 30px;
+}
+.description {
+    font-size: 20px;
+    margin: 10px 30px 20px 50px;
+    padding-bottom: 20px;
+
+}
+
+.twitter-content {
+    background: url('twitter.jpg') no-repeat top center scroll;
+    display: table;
+    width: 100%;
+    height:40%;
+    position: relative;
+}
+
+.show-more-block {
+    background:white;
+    height:175px;
+}
+.show-more-botton {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 20px 10px 20px; 
+    background: #ff0060;
+    color: white;
+    position: absolute;
+
+   left: 50%;
+   top: 100%; 
+   margin-left: -100px; /* połowa szerokości */
+   margin-top: -100px;
+}
+.map {
+    padding: 10px 0px;
+    position: relative;
+    width: 800px;
+    height: 400px;
+}
+
+@media(min-width:979px){ 
+.block {
+    width: 240px;
+    display: inline-block;
+    margin: 10px 0 30px 0;
+}
+}
+@media(max-width:480px){
+    .text-vertical-center h1 {
+        font-size: 3em;
+    }
+    .text-vertical-center h3 {
+        font-size: 2em;
+    }
+    .text-vertical-center {
+
+    }
+    .header {
+        height: 35%;
+        background: url('phone.jpg') no-repeat top center scroll;
+    }
+    h2:first-child {
+        font-size: 20px;
+    }
+    .black-content {
+        height:20%;
+    }
+}

@@ -1,0 +1,9 @@
+<%= form_for @search, html: {class:"pure-form"} do |s| %>
+	<div class="field">
+		<%= s.label :start_date %>
+		<%= s.text_field :start_date %>
+	</div>
+<div class="actions"> <%= s.submit "Search", class: "pute-button pure-button-primary" %> 
+</div>
+<% end %>
+

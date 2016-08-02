@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  time: 2016-01-19 15:43:53
+  host: MyString
+  desc: MyString
+  people: 1
+  price: 1
+
+two:
+  name: MyString
+  time: 2016-01-19 15:43:53
+  host: MyString
+  desc: MyString
+  people: 1
+  price: 1

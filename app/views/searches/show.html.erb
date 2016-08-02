@@ -1,0 +1,12 @@
+<% if @search.search_events.empty? %>
+	No records found
+<% else %>
+	<% @search.search_books.each do |c| %>
+
+		<div class="div">
+		 Price $ <%= c.start_date %>
+
+
+		 </div>
+	<% end %>
+<% end %>
